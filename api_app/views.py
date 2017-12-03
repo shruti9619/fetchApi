@@ -30,7 +30,7 @@ def notification_api(request):
             notif = fetch_notifics(limit)
 
         except:
-            print "exception occured"
+            print("exception occured")
             notif = ["Maybe an internal error occured. Please come back later."]
             return HttpResponse(json.dumps(notif), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     #sys.setrecursionlimit(10000)
