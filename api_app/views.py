@@ -34,7 +34,8 @@ def notification_api(request):
             notif = ["Maybe an internal error occured. Please come back later."]
             return HttpResponse(json.dumps(notif), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     #sys.setrecursionlimit(10000)
-    cache.set('notif_cache', notif, '120')
+
+    #cache.set('notif_cache', notif, '120')
     #cache
     #print cache.get('notif')
     return HttpResponse(json.dumps(notif, sort_keys=True, indent=4, ensure_ascii=True , separators=(',', ': ')),  status= status.HTTP_200_OK)
